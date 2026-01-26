@@ -47,10 +47,7 @@ int main()
         bg->apply(porte, fgMask);
 
         // Nettoyage
-        threshold(fgMask, fgMask, 175, 255, THRESH_BINARY);
-        //adaptiveThreshold(fgMask, fgMask, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY, 11, 2);
-        //adaptiveThreshold(fgMask, fgMask, 255, ADAPTIVE_THRESH_GAUSSIAN_C, THRESH_BINARY, 11, 3);
-        imshow("Threshold", fgMask);
+        threshold(fgMask, fgMask, 200, 255, THRESH_BINARY);
         morphologyEx(fgMask, fgMask, MORPH_OPEN,
                      getStructuringElement(MORPH_RECT, Size(5, 5)));
         morphologyEx(fgMask, fgMask, MORPH_DILATE,
